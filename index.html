@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Премиальный трекер вакцин</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/calendar.css">
+    <link rel="stylesheet" href="styles/vaccines.css">
+    <link rel="stylesheet" href="styles/tuberculin.css">
+    <link rel="stylesheet" href="styles/growth.css">
+    <link rel="stylesheet" href="styles/feeding.css">
+    <link rel="stylesheet" href="styles/checkup.css">
+    <link rel="stylesheet" href="styles/achievements.css">
+    <link rel="stylesheet" href="styles/statistics.css">
+    <link rel="stylesheet" href="styles/npr.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/logo.svg" alt="Трекер вакцин лого" class="logo">
+                <h1 class="app-title">Трекер вакцин</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span class="nav-text">Дашборд</span>
+                </a>
+                <a href="#calendar" class="nav-item">
+                    <i class="far fa-calendar-alt"></i>
+                    <span class="nav-text">Календарь</span>
+                </a>
+                <a href="#vaccines" class="nav-item">
+                    <i class="fas fa-syringe"></i>
+                    <span class="nav-text">Вакцины</span>
+                </a>
+                <a href="#tuberculin" class="nav-item">
+                    <i class="fas fa-lungs"></i>
+                    <span class="nav-text">Туберкулинодиагностика</span>
+                </a>
+                <a href="#growth" class="nav-item">
+                    <i class="fas fa-child"></i>
+                    <span class="nav-text">Физическое развитие</span>
+                </a>
+                <a href="#feeding" class="nav-item">
+                    <i class="fas fa-baby-carriage"></i>
+                    <span class="nav-text">Дозатор кормления</span>
+                </a>
+                <a href="#checkup" class="nav-item">
+                    <i class="fas fa-stethoscope"></i>
+                    <span class="nav-text">Профосмотр</span>
+                </a>
+                <a href="#achievements" class="nav-item">
+                    <i class="fas fa-trophy"></i>
+                    <span class="nav-text">Достижения</span>
+                </a>
+                <a href="#statistics" class="nav-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span class="nav-text">Статистика</span>
+                </a>
+                <a href="#npr" class="nav-item">
+                    <i class="fas fa-brain"></i>
+                    <span class="nav-text">НПР</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="btn-theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <span class="toggle-text">Ночная тема</span>
+                </button>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <h2 id="page-title" class="page-title">Дашборд</h2>
+                <div class="user-controls">
+                    <div class="notifications">
+                        <i class="far fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-info">
+                        <a href="auth.html" class="btn login-btn">Войти</a>
+                        <img src="assets/avatar-placeholder.png" alt="Аватар пользователя" class="user-avatar">
+                        <span class="user-name">Анна Иванова</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            <div id="main-container"></div>
+        </main>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Информация о ребенке</h2>
+            <form id="child-info-form">
+                <div class="form-group">
+                    <label for="child-name-input">Имя ребенка:</label>
+                    <input type="text" id="child-name-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="child-birthdate-input">Дата рождения:</label>
+                    <input type="date" id="child-birthdate-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="child-gender-input">Пол:</label>
+                    <select id="child-gender-input" required>
+                        <option value="male">Мальчик</option>
+                        <option value="female">Девочка</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/vaccines.js"></script>
+    <script src="js/tuberculin.js"></script>
+    <script src="js/growth.js"></script>
+    <script src="js/feeding.js"></script>
+    <script src="js/checkup.js"></script>
+    <script src="js/achievements.js"></script>
+    <script src="js/statistics.js"></script>
+    <script src="js/npr.js"></script>
+</body>
+</html>
